@@ -66,7 +66,7 @@ include 'components/wishlist_cart.php';
         xhttp.onload = function(){
             document.getElementById("productslist").innerHTML = this.responseText;
         }
-        xhttp.open ("GET", "ajax_home.php");
+        xhttp.open ("GET", "ajax_index.php");
         xhttp.send();
 
     }

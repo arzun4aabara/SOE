@@ -15,7 +15,7 @@
 
    <section class="flex">
       
-      <a href="home.php" class="logo">
+      <a href="index.php" class="logo">
          <img src="project images/Burgur.png" alt="Trulli" width="70" height="70">
           <span class="hotel_n">
             <h2>SOE</h2>
@@ -23,7 +23,7 @@
           </span>
       </a>
       <nav class="navbar">
-         <a href="home.php">Home</a>
+         <a href="index.php">Home</a>
          <a href="about.php">About</a>
          <a href="orders.php">Orders</a>
          <a href="shop.php">Menu</a>
@@ -66,7 +66,7 @@
          <div class="flex-btn">
             <a href="user_register.php" class="option-btn">Register</a>
             <a href="user_login.php" class="option-btn">Login</a>
-            <a href="../home.php" class="option-btn">Guest</a>
+            <a href="../index.php" class="option-btn">Guest</a>
          <?php
             }
          ?>      

@@ -1,7 +1,7 @@
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
---5
+-- 5
 -- Host: 127.0.0.1
 -- Generation Time: Apr 30, 2022 at 12:51 PM
 -- Server version: 10.4.22-MariaDB
@@ -11,6 +11,9 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+05:45";
 
+CREATE DATABASE IF NOT EXISTS `shop_db` CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+
+USE `shop_db`;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -27,7 +30,7 @@ SET time_zone = "+05:45";
 -- Table structure for table `admins`
 --
 
-CREATE TABLE `admins` (
+CREATE TABLE IF NOT EXISTS `admins`(
   `id` int(100) NOT NULL,
   `name` varchar(20) NOT NULL,
   `password` varchar(50) NOT NULL
@@ -46,7 +49,7 @@ INSERT INTO `admins` (`id`, `name`, `password`) VALUES
 -- Table structure for table `cart`
 --
 
-CREATE TABLE `cart` (
+CREATE TABLE IF NOT EXISTS `cart`(
   `id` int(100) NOT NULL,
   `user_id` int(100) NOT NULL,
   `pid` int(100) NOT NULL,
@@ -62,7 +65,7 @@ CREATE TABLE `cart` (
 -- Table structure for table `messages`
 --
 
-CREATE TABLE `messages` (
+CREATE TABLE IF NOT EXISTS `messages`(
   `id` int(100) NOT NULL,
   `user_id` int(100) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -77,7 +80,7 @@ CREATE TABLE `messages` (
 -- Table structure for table `orders`
 --
 
-CREATE TABLE `orders` (
+CREATE TABLE IF NOT EXISTS `orders`(
   `id` int(100) NOT NULL,
   `user_id` int(100) NOT NULL,
   `name` varchar(20) NOT NULL,
@@ -87,7 +90,7 @@ CREATE TABLE `orders` (
   `address` varchar(500) NOT NULL,
   `total_products` varchar(1000) NOT NULL,
   `total_price` int(100) NOT NULL,
-  `placed_on` date NOT NULL DEFAULT current_timestamp(),
+  `placed_on` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `payment_status` varchar(20) NOT NULL DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -97,7 +100,7 @@ CREATE TABLE `orders` (
 -- Table structure for table `products`
 --
 
-CREATE TABLE `products` (
+CREATE TABLE IF NOT EXISTS `products`(
   `id` int(100) NOT NULL,
   `name` varchar(100) NOT NULL,
   `details` varchar(500) NOT NULL,
@@ -113,7 +116,7 @@ CREATE TABLE `products` (
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users`(
   `id` int(100) NOT NULL,
   `name` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -126,7 +129,7 @@ CREATE TABLE `users` (
 -- Table structure for table `wishlist`
 --
 
-CREATE TABLE `wishlist` (
+CREATE TABLE IF NOT EXISTS `wishlist`(
   `id` int(100) NOT NULL,
   `user_id` int(100) NOT NULL,
   `pid` int(100) NOT NULL,
